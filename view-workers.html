@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Workers</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0047AB;
+            color: white;
+            border-radius: 8px;
+        }
+        .back-btn {
+            background-color: white;
+            color: #0047AB;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .workers-list {
+            background-color: white;
+            color: #333;
+            border-radius: 4px;
+            padding: 15px;
+            margin-top: 20px;
+        }
+        .worker-item {
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        .worker-item:last-child {
+            border-bottom: none;
+        }
+        .worker-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .availability-day {
+            margin-bottom: 10px;
+        }
+        .day-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .time-slots {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .time-slot {
+            background-color: #f2f2f2;
+            padding: 5px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .edit-btn, .delete-btn {
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            border: none;
+            margin-right: 10px;
+        }
+        .edit-btn {
+            background-color: #0047AB;
+            color: white;
+        }
+        .delete-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+        .worker-controls {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.location.href='dashboard.html'">Back</button>
+        
+        <h1>View Workers</h1>
+        
+        <div id="workers-list" class="workers-list">
+            <div id="loading">Loading workers...</div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="view-workers.js"></script>
+</body>
+</html>
