@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Manager - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <h1>Service Center Scheduler Dashboard</h1>
+        
+        <button class="dashboard-btn" id="import-excel">Import Excel Schedule Data</button>
+        <button class="dashboard-btn" id="create-students">Create Workers & Set Availability</button>
+        <button class="dashboard-btn" id="modify-hours">Modify Service Center Hours</button>
+        <button class="dashboard-btn" id="create-schedule">Generate Schedule</button>
+        <button class="dashboard-btn" id="view-workers">View Workers</button>
+        <button class="dashboard-btn" id="logout">Logout</button>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
