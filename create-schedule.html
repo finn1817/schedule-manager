@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate Schedule</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0047AB;
+            color: white;
+            border-radius: 8px;
+        }
+        .back-btn {
+            background-color: white;
+            color: #0047AB;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .schedule-options {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+        .generate-btn {
+            background-color: white;
+            color: #0047AB;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+        }
+        .schedule-result {
+            margin-top: 30px;
+            background-color: white;
+            color: #333;
+            padding: 20px;
+            border-radius: 4px;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        .schedule-table th, .schedule-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #f2f2f2;
+        }
+        .print-btn {
+            background-color: #0047AB;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.location.href='dashboard.html'">Back</button>
+        
+        <h1>Generate Schedule</h1>
+        
+        <div class="schedule-options">
+            <div class="input-group">
+                <label for="location">Location</label>
+                <select id="location">
+                    <option value="esports">E-Sports Lounge</option>
+                    <option value="service">ITS Service Center</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="start-date">Start Date</label>
+                <input type="date" id="start-date">
+            </div>
+            
+            <div class="input-group">
+                <label for="end-date">End Date</label>
+                <input type="date" id="end-date">
+            </div>
+        </div>
+        
+        <button class="generate-btn" id="generate-schedule">Generate Schedule</button>
+        
+        <div id="schedule-output" style="display: none;">
+            <div class="schedule-result">
+                <h2 id="schedule-title">Schedule</h2>
+                <div id="schedule-content"></div>
+                <button class="print-btn" id="print-schedule">Print Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="create-schedule.js"></script>
+</body>
+</html>
