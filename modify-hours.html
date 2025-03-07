@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Service Center Hours</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            display: block;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #0047AB;
+            color: white;
+            border-radius: 8px;
+        }
+        .back-btn {
+            background-color: white;
+            color: #0047AB;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .location-select {
+            margin-bottom: 20px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            border-radius: 4px;
+            border: none;
+        }
+        .hours-form {
+            background-color: white;
+            color: #333;
+            border-radius: 4px;
+            padding: 15px;
+        }
+        .day-settings {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .day-settings:last-child {
+            border-bottom: none;
+        }
+        .day-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .time-inputs {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+        .time-input {
+            display: flex;
+            flex-direction: column;
+        }
+        .time-input label {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        .time-input input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .closed-checkbox {
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .closed-checkbox input {
+            margin-right: 5px;
+        }
+        .save-btn {
+            background-color: #0047AB;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            width: 100%;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="back-btn" onclick="window.location.href='dashboard.html'">Back</button>
+        
+        <h1>Modify Service Center Hours</h1>
+        
+        <div class="location-select">
+            <select id="location">
+                <option value="esports">E-Sports Lounge</option>
+                <option value="service">ITS Service Center</option>
+            </select>
+        </div>
+        
+        <div class="hours-form">
+            <div class="day-settings" id="monday-settings">
+                <div class="day-title">Monday</div>
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <label for="monday-open">Opening Time</label>
+                        <input type="time" id="monday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="monday-close">Closing Time</label>
+                        <input type="time" id="monday-close" value="20:00">
+                    </div>
+                    <div class="closed-checkbox">
+                        <input type="checkbox" id="monday-closed">
+                        <label for="monday-closed">Closed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-settings" id="tuesday-settings">
+                <div class="day-title">Tuesday</div>
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <label for="tuesday-open">Opening Time</label>
+                        <input type="time" id="tuesday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="tuesday-close">Closing Time</label>
+                        <input type="time" id="tuesday-close" value="20:00">
+                    </div>
+                    <div class="closed-checkbox">
+                        <input type="checkbox" id="tuesday-closed">
+                        <label for="tuesday-closed">Closed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-settings" id="wednesday-settings">
+                <div class="day-title">Wednesday</div>
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <label for="wednesday-open">Opening Time</label>
+                        <input type="time" id="wednesday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="wednesday-close">Closing Time</label>
+                        <input type="time" id="wednesday-close" value="20:00">
+                    </div>
+                    <div class="closed-checkbox">
+                        <input type="checkbox" id="wednesday-closed">
+                        <label for="wednesday-closed">Closed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-settings" id="thursday-settings">
+                <div class="day-title">Thursday</div>
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <label for="thursday-open">Opening Time</label>
+                        <input type="time" id="thursday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="thursday-close">Closing Time</label>
+                        <input type="time" id="thursday-close" value="20:00">
+                    </div>
+                    <div class="closed-checkbox">
+                        <input type="checkbox" id="thursday-closed">
+                        <label for="thursday-closed">Closed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="day-settings" id="friday-settings">
+                <div class="day-title">Friday</div>
+                <div class="time-inputs">
+                    <div class="time-input">
+                        <label for="friday-open">Opening Time</label>
+                        <input type="time" id="friday-open" value="08:00">
+                    </div>
+                    <div class="time-input">
+                        <label for="friday-close">Closing Time</label>
+                        <input type="time" id="friday-close" value="20:00">
+                    </div>
+                    <div class="closed-checkbox">
+                        <input type="checkbox" id="friday-closed">
+                        <label for="friday-closed">Closed</label>
+                    </div>
+                </div>
+            </div>
+            
+            <button class="save-btn" id="save-hours">Save Hours</button>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="modify-hours.js"></script>
+</body>
+</html>
