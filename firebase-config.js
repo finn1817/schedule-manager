@@ -2,8 +2,7 @@
 import { initializeApp } from "firebase/app";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
+// The web app's Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyB7ldjR5FHH109p_43eN75vWysCcoLRnYM",
   authDomain: "schedule-manager-3f42b.firebaseapp.com",
@@ -12,6 +11,5 @@ const firebaseConfig = {
   messagingSenderId: "906914836018",
   appId: "1:906914836018:web:9e68e6d7112da003d4d62b"
 };
-
-// Initialize Firebase
+// connect to & start the firebase
 const app = initializeApp(firebaseConfig);
